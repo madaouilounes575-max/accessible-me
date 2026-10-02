@@ -7,7 +7,8 @@ body {
   line-height: 1.6;
 }
 
-/*I added a skip link so keyboard users can get to the main content without going through all the navigation. */
+/*i added a skip link so keyboard users can get to the main content without going through
+ all the navigation. */
 .skip-link {
   position: absolute;
   top: -100px;
@@ -48,7 +49,7 @@ h6 {
 }
 
 
-/*A darker header helps  the studio name stand out more and gives the page a stronger look. **/
+/*adarker header helps  the studio name stand out more and gives the page a stronger look. **/
 .site-header {
   background-color: #222;
   color: #fff;
@@ -66,7 +67,7 @@ img {
   width: 100%;
   display: block;
 }
-/*Better spacing  makes the navigation cleaner and easier to use. */
+/*better spacing  makes the navigation cleaner and easier to use. */
 .main-nav ul {
   list-style: none;
   display: flex;
@@ -119,8 +120,7 @@ img {
   margin-top: 0;
   font-size: 2rem;
 }
-
-/*I kept links underlined so users can recognize them without depending only on color.*/
+/*i kept links underlined so users can recognize them without depending only on color.*/
 .main-content a {
   color: #222;
   text-decoration: underline;
@@ -163,7 +163,7 @@ form textarea {
   resize: vertical;
 }
 
-/*  I made the button stand out while keeping strong text contrast. */
+/* just made the button stand out while keeping strong text contrast. */
 form button {
   background-color: #222;
   color: #fff;
@@ -180,7 +180,7 @@ form button:focus {
   background-color: #444;
 }
 
-/*   I added a darker footer to visually finish the page. */
+/*i added a darker footer to visually finish the page. */
 .site-footer {
   background-color: #222;
   color: #fff;
@@ -188,7 +188,6 @@ form button:focus {
   text-align: center;
   border-radius: 12px 12px 0 0;
 }
-
 /*Responsive changes help the page look better on bigger screens. */
 @media (min-width: 760px) {
   .site-header {
