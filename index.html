@@ -5,74 +5,163 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accessible Me</title>
+  <title>Accessible Me - Jam Box Studios</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&family=Stick+No+Bills:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;500&family=Stick+No+Bills:wght@300&display=swap"
+   rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+
+<!-- I finally figured out Schema.org after fighting with it for way too long -->
+
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+   "@type": "LocalBusiness",
+ "name": "Jam Box Studios",
+   "email": "johnjoe@jambox.ca",
+  "telephone": "613-000-0000",
+  "address": {
+   "@type": "PostalAddress",
+  "streetAddress": "123 Guitar Road",
+   "addressLocality": "Musicville",
+  "addressCountry": "Canada",
+   "postalCode": "B3T 0L0"
+    }
+  }
+  </script>
 </head>
 
 <body>
-  <div class="container">
-    <div class="site-header">
-      <h1>Jam Box Studios</h1>
-      <div class="main-nav">
+
+  <!-- I added a skip link so users using the keyboard don't have to go
+    through the whole navigation every time.yay -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="container" itemscope itemtype="https://schema.org/LocalBusiness">
+
+    <header class="site-header" id="home">
+
+      <h1 itemprop="name">Jam Box Studios</h1>
+
+   <!-- I added an ARIA label so screen readers can understand the navigation without making 
+   things complicated -->
+<nav class="main-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Reservation</a></li>
-          <li><a href="#">Studio</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#owner">Owner</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#address">Address</a></li>
         </ul>
-      </div>
-      <img alt="Jam Box Studios" src="https://picsum.photos/1200/900" class="banner">
-    </div>
-    <div class="main-content">
-      <h1>Welcome to Jam Box</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus laboriosam praesentium nostrum ipsa eveniet, officia deserunt cumque eius esse enim, ipsam accusantium autem nihil quaerat sequi perferendis optio quia veritatis.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam perferendis expedita sed itaque odit ipsam omnis, eos voluptates magni fugit culpa voluptatibus, inventore eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.</p>
-      <div class="owner">
-        <h1>Meet the owner</h1>
-        <ul>
-          <li>Name: John Doe</li>
-          <li>Title: CEO</li>
-          <li>Email: johnjoe@jambox.ca</li>
-          <li>Phone: 613-000-0000</li>
-        </ul>
-        <h1>Address</h1>
+      </nav>
+
+    <img src="https://picsum.photos/1200/900"
+        class="banner"
+        alt=""
+      >
+
+    </header>
+
+    <main class="main-content" id="main-content">
+
+      <section>
+
+        <h2>Welcome to Jam Box</h2>
+
         <p>
-          Jambox Studios
-          123 Guitar Road,
-          Musicville, Danceistan
-          B3T 0L0
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Temporibus laboriosam praesentium nostrum ipsa eveniet,
+          officia deserunt cumque eius esse enim, ipsam accusantium
+          autem nihil quaerat sequi perferendis optio quia veritatis.
         </p>
-      </div>
-      <div class="contact-section">
-        <h1>Contact Us</h1>
+
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Veniam perferendis expedita sed itaque odit ipsam omnis,
+          eos voluptates magni fugit culpa voluptatibus, inventore
+          eaque, eligendi voluptatum! Voluptate iusto error voluptatibus.
+        </p>
+
+      </section>
+
+      <section class="owner" id="owner" itemscope itemtype="https://schema.org/Person">
+
+        <h2>Meet the Owner</h2>
+
+        <ul>
+          <li itemprop="name">Name: John Doe</li>
+          <li>Title: <span itemprop="jobTitle">CEO</span></li>
+          <li>Email: <a href="mailto:johnjoe@jambox.ca" itemprop="email">johnjoe@jambox.ca</a></li>
+          <li>Phone: <a href="tel:+16130000000" itemprop="telephone">613-000-0000</a></li>
+        </ul>
+
+      </section>
+
+      <section id="address">
+
+        <h2>Address</h2>
+
+        <address itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+          <span itemprop="name">Jam Box Studios</span><br>
+          <span itemprop="streetAddress">123 Guitar Road</span><br>
+          <span itemprop="addressLocality">Musicville</span>, <span itemprop="addressRegion">Danceistan</span><br>
+          <span itemprop="postalCode">B3T 0L0</span>, <span itemprop="addressCountry">Canada</span>
+        </address>
+
+      </section>
+
+      <section class="contact-section" id="contact">
+
+        <h2>Contact Us</h2>
+
         <form action="thanks.html">
-          <form action="thanks.html">
 
-  <label for="full-name">Full Name</label>
-  <input type="text" id="full-name" name="full-name" placeholder="Full Name">
+          <!-- Yaayy! I added labels and connected them to each form field to make the form more accessible. -->
 
-  <label for="email">Email</label>
-  <input type="email" id="email" name="email" placeholder="Email">
+          <label for="full-name">Full Name</label>
+          <input
+            type="text"
+            id="full-name"
+            name="full-name"
+            placeholder="Full Name"
+          >
 
-  <label for="subject">Subject</label>
-  <input type="text" id="subject" name="subject" placeholder="Subject">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email"
+          >
 
-  <label for="message">Your Message</label>
-  <textarea id="message" name="message"></textarea>
+          <label for="subject">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="Subject"
+          >
 
-  <button type="submit">Send</button>
-</form>
+          <label for="message">Your Message</label>
+          <textarea
+            id="message"
+            name="message"
+          ></textarea>
+
           <button type="submit">Send</button>
+
         </form>
-      </div>
-    </div>
-    <div class="site-footer">
-      &copy; 2021 Jam Box Studios
-    </div>
+
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2021 Jam Box Studios</p>
+    </footer>
+
   </div>
+
 </body>
 
 </html>
